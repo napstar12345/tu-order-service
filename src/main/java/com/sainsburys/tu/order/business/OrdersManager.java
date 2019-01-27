@@ -25,4 +25,9 @@ public class OrdersManager
     {
         return StreamSupport.stream(orderRepository.findAll().spliterator(), true);
     }
+
+    public Order saveOrder(Order order)
+    {
+        return orderRepository.save(order);
+    }
 }

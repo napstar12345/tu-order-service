@@ -1,0 +1,31 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: tu-order-service
+      auto-commit-interval-ms: 100
+      session-timeout-ms: 15000
+      auto-offset-reset: latest
+  cloud:
+    stream:
+      default:
+        consumer:
+          headerMode: raw
+        producer:
+          headerMode: raw
+      bindings:
+        input:
+          destination: col_sainsburys_logistics_delivery_clothing_dispatched
+  jpa:
+    hibernate:
+      ddl-auto: none
+  h2:
+    console:
+      enabled: true
+    datasource:
+        url: jdbc:h2:mem:testdb
+        username: sa
+        password:
+liquibase:
+  change-log: classpath:db/liquibase-changelog.xml
+  contexts: dev
