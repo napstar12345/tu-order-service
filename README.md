@@ -1,7 +1,7 @@
 ### How to run?
 compile, test, package
 ```bash
-mvn clean package
+mvn clean install
 ```
 
 run
