@@ -26,6 +26,3 @@ spring:
         url: jdbc:h2:mem:testdb
         username: sa
         password:
-liquibase:
-  change-log: classpath:db/liquibase-changelog.xml
-  contexts: dev
