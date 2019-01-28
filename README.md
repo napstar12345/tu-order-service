@@ -15,3 +15,7 @@ kafka-console-producer --broker-list localhost:9092 --topic col_sainsburys_logis
 >{  "status": "collected", "code": "70010110008100T" }
 ```
 
+Query API for order information:
+```bash
+http://localhost:8080/orders/70010110008100T?page=0&size=3
+```
