@@ -24,10 +24,6 @@ public class OrderService
         return repository.findByCode(code, pageable);
     }
 
-    public Page<Order> findAllOrders(Pageable pageable) {
-        return repository.findAll(pageable);
-    }
-
     @Transactional
     public Order save(Order order)
     {
