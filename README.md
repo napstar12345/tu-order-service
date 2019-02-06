@@ -19,3 +19,8 @@ Query API for order information:
 ```bash
 http://localhost:8080/orders/70010110008100T?page=0&size=3
 ```
+
+Swagger API for endpoints:
+```bash
+http://localhost:8080//v2/api-docs
+```
