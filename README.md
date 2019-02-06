@@ -24,3 +24,8 @@ Swagger API for endpoints:
 ```bash
 http://localhost:8080//v2/api-docs
 ```
+
+Generating SONAR report
+```bash
+mvn clean install sonar:sonar
+```
