@@ -8,6 +8,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * Created by naeempatel on 28/01/2019.
  */
 @Configuration
-@EnableWebMvc
 @EnableSpringDataWebSupport
 class WebConfiguration {}

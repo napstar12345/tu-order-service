@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguratio
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = { WebMvcAutoConfiguration.class })
+@EnableAutoConfiguration
 @EnableJpaRepositories("com.sainsburys.tu.order.persistence")
 public class OrderApiApplication
 {

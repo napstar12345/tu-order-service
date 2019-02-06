@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.*;
  * Created by naeempatel on 28/01/2019.
  */
 @RestController
+@RequestMapping("/orders")
 public class OrderController
 {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping(path = "/orders/{code}", produces = "application/json")
-    public Page<Order> order(@PathVariable String code, Pageable pageable)
+    @GetMapping(path = "/{code}", produces = "application/json")
+    public Page<Order> findOrderByCode(@PathVariable String code, Pageable pageable)
     {
         return orderService.findOrderByCode(code, pageable);
     }

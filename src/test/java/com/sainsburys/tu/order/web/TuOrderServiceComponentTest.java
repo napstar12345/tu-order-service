@@ -1,7 +1,8 @@
-package com.sainsburys.tu.order.service;
+package com.sainsburys.tu.order.web;
 
 
 import com.sainsburys.tu.order.persistence.entities.Order;
+import com.sainsburys.tu.order.service.OrderService;
 import org.apache.kafka.common.serialization.ByteArraySerializer;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -27,7 +28,7 @@ import static org.junit.Assert.assertNotNull;
 @EmbeddedKafka
 @SpringBootTest
 @DirtiesContext
-public class OrderServiceComponentTest
+public class TuOrderServiceComponentTest
 {
     private static final String ORDER_TOPIC = "col_sainsburys_logistics_delivery_clothing_dispatched";
     private static final String GROUP_NAME = "tu-order-service";
@@ -42,7 +43,7 @@ public class OrderServiceComponentTest
     }
 
     @Autowired
-    private OrderService orderService;
+    private OrderController orderController;
 
     @Before
     public void setUp() throws Exception
@@ -60,7 +61,7 @@ public class OrderServiceComponentTest
     @Test
     public void testIngestionOfOrdersFromKafkaToDBAndOrderLookup() throws Exception
     {
-        Page<Order> page = orderService.findOrderByCode("70010110008100T", new PageRequest(0,5));
+        Page<Order> page = orderController.findOrderByCode("70010110008100T", new PageRequest(0,5));
         assertNotNull(page);
         assertNotNull(page.getContent());
         assertEquals(1, page.getContent().size());
